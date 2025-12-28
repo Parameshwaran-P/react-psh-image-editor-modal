@@ -42,10 +42,10 @@
   "license": "MIT",
    "repository": {
     "type": "git",
-    "url": "https://github.com/Parameshwaran-P/React-premium-image-resize-editor.git"
+    "url": "https://github.com/Parameshwaran-P/react-psh-image-editor-modal.git"
   },
-  "homepage": "https://github.com/Parameshwaran-P/React-premium-image-resize-editor",
+  "homepage": "https://github.com/Parameshwaran-P/react-psh-image-editor-modal.git",
   "bugs": {
-    "url": "https://github.com/Parameshwaran-P/React-premium-image-resize-editor/issues"
+    "url": "https://github.com/Parameshwaran-P/react-psh-image-editor-modal.git/issues"
   }
 }
