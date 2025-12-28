@@ -1,6 +1,6 @@
 {
-  "name": "@parameshdev/react-psh-image-editor-modal",
-  "version": "1.0.1",
+  "name": "react-psh-image-editor-modal",
+  "version": "1.0.2",
   "description": "Premium psh image editor component for React",
   "type": "module",
   "main": "dist/index.js",
@@ -8,16 +8,13 @@
   "files": [
     "dist"
   ],
-   "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w"
   },
   "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",
