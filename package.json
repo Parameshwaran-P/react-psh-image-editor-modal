@@ -1,0 +1,51 @@
+{
+  "name": "react-psh-image-editor-modal",
+  "version": "1.0.0",
+  "description": "Premium psh image editor component for React",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-react": "^7.23.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "rollup": "^4.9.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tailwindcss": "^3.4.19"
+  },
+  "keywords": [
+    "react",
+    "psh",
+    "image-editor",
+    "canvas",
+    "image",
+    "editor",
+    "modal"
+  ],
+  "author": "Paramesh",
+  "license": "MIT",
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/Parameshwaran-P/React-premium-image-resize-editor.git"
+  },
+  "homepage": "https://github.com/Parameshwaran-P/React-premium-image-resize-editor",
+  "bugs": {
+    "url": "https://github.com/Parameshwaran-P/React-premium-image-resize-editor/issues"
+  }
+}
