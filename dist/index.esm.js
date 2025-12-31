@@ -333,12 +333,12 @@ var SizeSelectorModal = function SizeSelectorModal(_ref) {
   var onSelect = _ref.onSelect,
     onCancel = _ref.onCancel;
   return /*#__PURE__*/React.createElement("div", {
-    className: "fixed inset-0 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 z-50 flex items-center justify-center p-5"
+    className: "fixed inset-0 z-50 flex items-center justify-center px-4 py-6\r bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-y-auto"
   }, /*#__PURE__*/React.createElement("button", {
     onClick: onCancel,
-    className: "fixed top-6 left-6 w-10 h-10 flex items-center justify-center bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full transition-all"
+    className: "fixed top-4 left-4 sm:top-6 sm:left-6\r w-9 h-9 sm:w-10 sm:h-10\r flex items-center justify-center\r bg-white/10 hover:bg-white/20\r rounded-full transition-all"
   }, /*#__PURE__*/React.createElement("svg", {
-    className: "w-6 h-6 text-white",
+    className: "w-5 h-5 sm:w-6 sm:h-6 text-white",
     fill: "none",
     stroke: "currentColor",
     viewBox: "0 0 24 24"
@@ -348,11 +348,11 @@ var SizeSelectorModal = function SizeSelectorModal(_ref) {
     strokeWidth: 2,
     d: "M15 19l-7-7 7-7"
   }))), /*#__PURE__*/React.createElement("div", {
-    className: "w-full max-w-4xl bg-gray-800 bg-opacity-50 backdrop-blur-md rounded-2xl shadow-2xl p-8"
+    className: "w-full max-w-4xl bg-gray-800/60 backdrop-blur-md\r rounded-2xl shadow-2xl\r p-5 sm:p-8"
   }, /*#__PURE__*/React.createElement("h2", {
-    className: "text-white text-3xl font-bold mb-8 text-center"
+    className: "text-white text-xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center"
   }, "Select Platform Size"), /*#__PURE__*/React.createElement("div", {
-    className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+    className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4"
   }, Object.entries(platformSizes).map(function (_ref2) {
     var _ref3 = _slicedToArray(_ref2, 2),
       key = _ref3[0],
@@ -366,9 +366,9 @@ var SizeSelectorModal = function SizeSelectorModal(_ref) {
       onClick: function onClick() {
         return onSelect(key);
       },
-      className: "p-6 bg-gradient-to-br from-purple-600 to-purple-800 border-2 border-purple-500 border-opacity-30 rounded-xl cursor-pointer text-center text-white transition-all hover:scale-105 hover:shadow-xl hover:border-opacity-100"
+      className: "p-4 sm:p-6\r bg-gradient-to-br from-purple-600 to-purple-800\r border-2 border-purple-500/30\r rounded-xl cursor-pointer text-center text-white\r transition-all duration-200\r active:scale-95\r hover:scale-105 hover:shadow-xl hover:border-purple-400"
     }, /*#__PURE__*/React.createElement("h3", {
-      className: "text-xl font-semibold mb-2"
+      className: "text-base sm:text-xl font-semibold mb-1 sm:mb-2"
     }, label), /*#__PURE__*/React.createElement("p", {
       className: "text-sm opacity-90"
     }, width, " \xD7 ", height), /*#__PURE__*/React.createElement("p", {
@@ -807,10 +807,10 @@ var RightToolbar = function RightToolbar(_ref) {
       _ref2$unit = _ref2.unit,
       unit = _ref2$unit === void 0 ? '%' : _ref2$unit;
     return /*#__PURE__*/React.createElement("div", {
-      className: "mb-5"
+      className: "mb-4 sm:mb-5"
     }, /*#__PURE__*/React.createElement("label", {
-      className: "block text-sm font-semibold mb-2 text-white"
-    }, label, ": ", /*#__PURE__*/React.createElement("span", {
+      className: "block text-xs sm:text-sm font-semibold mb-2 text-white"
+    }, label, ":", ' ', /*#__PURE__*/React.createElement("span", {
       className: "text-purple-300 font-bold"
     }, value, unit)), /*#__PURE__*/React.createElement("input", {
       type: "range",
@@ -831,21 +831,21 @@ var RightToolbar = function RightToolbar(_ref) {
   var croppedWidth = Math.round(originalDimensions.width * crop.width / 100);
   var croppedHeight = Math.round(originalDimensions.height * crop.height / 100);
   return /*#__PURE__*/React.createElement("div", {
-    className: "flex-1 overflow-y-auto p-6 bg-slate-800"
+    className: "flex-1 overflow-y-auto p-4 sm:p-6 bg-slate-800"
   }, /*#__PURE__*/React.createElement("h3", {
-    className: "text-white text-xl font-bold mb-6 pb-3 border-b border-gray-600"
+    className: "text-white text-lg sm:text-xl font-bold mb-4 sm:mb-6 pb-3 border-b border-gray-600"
   }, "Edit Controls"), /*#__PURE__*/React.createElement("div", {
-    className: "mb-6 pb-6 border-b border-gray-600"
+    className: "mb-5 sm:mb-6 pb-5 sm:pb-6 border-b border-gray-600"
   }, /*#__PURE__*/React.createElement("h4", {
-    className: "text-white text-base font-bold mb-3"
+    className: "text-white text-sm sm:text-base font-bold mb-3"
   }, "Resize Image"), /*#__PURE__*/React.createElement("label", {
-    className: "block text-sm font-semibold mb-2 text-white"
+    className: "block text-xs sm:text-sm font-semibold mb-2 text-white"
   }, "Select new size:"), /*#__PURE__*/React.createElement("select", {
     value: resizeMode,
     onChange: function onChange(e) {
       return handleResizeChange(e.target.value);
     },
-    className: "w-full p-2.5 bg-gray-700 text-white rounded-lg border-2 border-gray-600 focus:border-purple-400 focus:ring-2 focus:ring-purple-400 focus:outline-none mb-3 text-sm font-medium"
+    className: "w-full p-3 sm:p-2.5 bg-gray-700 text-white rounded-lg border-2 border-gray-600\r focus:border-purple-400 focus:ring-2 focus:ring-purple-400 focus:outline-none\r mb-3 text-sm font-medium"
   }, /*#__PURE__*/React.createElement("option", {
     value: "no-change"
   }, "No change"), /*#__PURE__*/React.createElement("option", {
@@ -861,7 +861,7 @@ var RightToolbar = function RightToolbar(_ref) {
   }, "Custom Size...")), resizeMode === 'custom' && /*#__PURE__*/React.createElement("div", {
     className: "space-y-2"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "flex gap-2"
+    className: "flex flex-col sm:flex-row gap-2"
   }, /*#__PURE__*/React.createElement("input", {
     type: "number",
     placeholder: "Width",
@@ -869,9 +869,9 @@ var RightToolbar = function RightToolbar(_ref) {
     onChange: function onChange(e) {
       return setCustomWidth(e.target.value);
     },
-    className: "flex-1 p-2 bg-gray-700 text-white text-sm rounded-lg border-2 border-gray-600 focus:border-purple-400 focus:ring-2 focus:ring-purple-400 focus:outline-none font-medium"
+    className: "flex-1 p-3 sm:p-2 bg-gray-700 text-white text-sm rounded-lg\r border-2 border-gray-600 focus:border-purple-400 focus:ring-2\r focus:ring-purple-400 focus:outline-none font-medium"
   }), /*#__PURE__*/React.createElement("span", {
-    className: "text-white self-center text-sm font-bold"
+    className: "hidden sm:block text-white self-center text-sm font-bold"
   }, "\xD7"), /*#__PURE__*/React.createElement("input", {
     type: "number",
     placeholder: "Height",
@@ -879,14 +879,14 @@ var RightToolbar = function RightToolbar(_ref) {
     onChange: function onChange(e) {
       return setCustomHeight(e.target.value);
     },
-    className: "flex-1 p-2 bg-gray-700 text-white text-sm rounded-lg border-2 border-gray-600 focus:border-purple-400 focus:ring-2 focus:ring-purple-400 focus:outline-none font-medium"
+    className: "flex-1 p-3 sm:p-2 bg-gray-700 text-white text-sm rounded-lg\r border-2 border-gray-600 focus:border-purple-400 focus:ring-2\r focus:ring-purple-400 focus:outline-none font-medium"
   })), /*#__PURE__*/React.createElement("button", {
     onClick: handleCustomResize,
-    className: "w-full px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"
+    className: "w-full px-4 py-2 bg-purple-600 text-white text-sm font-bold\r rounded-lg hover:bg-purple-700 transition-colors"
   }, "Apply Custom Size")), /*#__PURE__*/React.createElement("div", {
-    className: "mt-3 text-xs bg-slate-900 rounded-lg p-3 border border-gray-700"
+    className: "mt-3 text-xs bg-slate-900 rounded-lg p-3 border border-gray-700 overflow-x-auto"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "grid grid-cols-3 gap-2"
+    className: "grid grid-cols-3 gap-2 min-w-[260px]"
   }, /*#__PURE__*/React.createElement("div", {
     className: "font-bold text-white"
   }, "Your Image"), /*#__PURE__*/React.createElement("div", {
@@ -942,7 +942,7 @@ var RightToolbar = function RightToolbar(_ref) {
   }), /*#__PURE__*/React.createElement("div", {
     className: "border-t border-gray-600 pt-4 mt-4"
   }, /*#__PURE__*/React.createElement("h4", {
-    className: "text-white text-base font-bold mb-4"
+    className: "text-white text-sm sm:text-base font-bold mb-3 sm:mb-4"
   }, "Crop Position"), /*#__PURE__*/React.createElement(SliderControl, {
     label: "Crop X",
     value: crop.x,
@@ -1055,12 +1055,12 @@ var ImageEditorModal = function ImageEditorModal(_ref) {
     }
   };
   return /*#__PURE__*/React.createElement("div", {
-    className: "fixed inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 z-50 flex items-center justify-center p-5"
+    className: "fixed inset-0 z-50 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900\r flex items-center justify-center p-3 sm:p-5 overflow-hidden"
   }, /*#__PURE__*/React.createElement("button", {
     onClick: onBackToSizeSelector,
-    className: "fixed top-6 left-6 w-10 h-10 flex items-center justify-center bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full transition-all z-10"
+    className: "fixed top-4 left-4 sm:top-6 sm:left-6\r w-9 h-9 sm:w-10 sm:h-10\r flex items-center justify-center\r bg-white/10 hover:bg-white/20\r rounded-full transition-all z-20"
   }, /*#__PURE__*/React.createElement("svg", {
-    className: "w-6 h-6 text-white",
+    className: "w-5 h-5 sm:w-6 sm:h-6 text-white",
     fill: "none",
     stroke: "currentColor",
     viewBox: "0 0 24 24"
@@ -1070,21 +1070,23 @@ var ImageEditorModal = function ImageEditorModal(_ref) {
     strokeWidth: 2,
     d: "M15 19l-7-7 7-7"
   }))), /*#__PURE__*/React.createElement("div", {
-    className: "w-full max-w-6xl h-[90vh] bg-slate-800 bg-opacity-60 backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden flex"
+    className: "w-full max-w-6xl h-[95vh] sm:h-[90vh]\r bg-slate-800/60 backdrop-blur-lg\r rounded-xl sm:rounded-2xl shadow-2xl\r overflow-hidden flex flex-col md:flex-row"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "flex-1 flex items-center justify-center p-8 bg-gradient-to-br from-gray-900 to-gray-800"
+    className: "flex-1 flex items-center justify-center\r p-4 sm:p-8\r bg-gradient-to-br from-gray-900 to-gray-800"
   }, /*#__PURE__*/React.createElement(CanvasEditor, {
     image: image,
     settings: settings,
     onCropChange: handleCropChange
   })), /*#__PURE__*/React.createElement("div", {
-    className: "w-80 flex z-10 flex-col bg-slate-800 border-l border-gray-700 shadow-2xl"
+    className: "w-full md:w-80\r flex flex-col\r bg-slate-800 border-t md:border-t-0 md:border-l border-gray-700\r shadow-2xl"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex-1 overflow-y-auto"
   }, /*#__PURE__*/React.createElement(RightToolbar, {
     settings: settings,
     onSettingsChange: onSettingsChange,
     imageData: image
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "p-4 bg-slate-900 border-t border-gray-700"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "p-3 sm:p-4 bg-slate-900 border-t border-gray-700"
   }, /*#__PURE__*/React.createElement(BottomActions, {
     onSubmit: handleSubmit,
     onDownload: handleDownload,

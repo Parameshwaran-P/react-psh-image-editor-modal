@@ -4,7 +4,14 @@ import RightToolbar from './RightToolbar';
 import BottomActions from './BottomActions';
 import { canvasToBlob, downloadFromCanvas } from '../utils/imageExport';
 
-const ImageEditorModal = ({ image, settings, onSettingsChange, onSubmit, onCancel, onBackToSizeSelector }) => {
+const ImageEditorModal = ({
+  image,
+  settings,
+  onSettingsChange,
+  onSubmit,
+  onCancel,
+  onBackToSizeSelector
+}) => {
   const canvasRef = useRef(null);
 
   const handleCropChange = (newCrop) => {
@@ -30,37 +37,70 @@ const ImageEditorModal = ({ image, settings, onSettingsChange, onSubmit, onCance
   };
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 z-50 flex items-center justify-center p-5">
-      {/* Back Arrow */}
+    <div className="fixed inset-0 z-50 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900
+      flex items-center justify-center p-3 sm:p-5 overflow-hidden">
+
+      {/* Back Button */}
       <button
         onClick={onBackToSizeSelector}
-        className="fixed top-6 left-6 w-10 h-10 flex items-center justify-center bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full transition-all z-10"
+        className="fixed top-4 left-4 sm:top-6 sm:left-6
+        w-9 h-9 sm:w-10 sm:h-10
+        flex items-center justify-center
+        bg-white/10 hover:bg-white/20
+        rounded-full transition-all z-20"
       >
-        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        <svg
+          className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 19l-7-7 7-7"
+          />
         </svg>
       </button>
 
-      <div className="w-full max-w-6xl h-[90vh] bg-slate-800 bg-opacity-60 backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden flex">
+      {/* Modal Container */}
+      <div
+        className="w-full max-w-6xl h-[95vh] sm:h-[90vh]
+        bg-slate-800/60 backdrop-blur-lg
+        rounded-xl sm:rounded-2xl shadow-2xl
+        overflow-hidden flex flex-col md:flex-row"
+      >
         {/* Canvas Area */}
-        <div className="flex-1 flex items-center justify-center p-8 bg-gradient-to-br from-gray-900 to-gray-800">
-          <CanvasEditor 
-            image={image} 
+        <div
+          className="flex-1 flex items-center justify-center
+          p-4 sm:p-8
+          bg-gradient-to-br from-gray-900 to-gray-800"
+        >
+          <CanvasEditor
+            image={image}
             settings={settings}
             onCropChange={handleCropChange}
           />
         </div>
 
-        {/* Sidebar - Resizable */}
-        <div className="w-80 flex z-10 flex-col bg-slate-800 border-l border-gray-700 shadow-2xl">
-          <RightToolbar 
-            settings={settings} 
-            onSettingsChange={onSettingsChange}
-            imageData={image}
-          />
-          
+        {/* Right Toolbar → Bottom Panel on Mobile */}
+        <div
+          className="w-full md:w-80
+          flex flex-col
+          bg-slate-800 border-t md:border-t-0 md:border-l border-gray-700
+          shadow-2xl"
+        >
+          <div className="flex-1 overflow-y-auto">
+            <RightToolbar
+              settings={settings}
+              onSettingsChange={onSettingsChange}
+              imageData={image}
+            />
+          </div>
+
           {/* Bottom Actions */}
-          <div className="p-4 bg-slate-900 border-t border-gray-700">
+          <div className="p-3 sm:p-4 bg-slate-900 border-t border-gray-700">
             <BottomActions
               onSubmit={handleSubmit}
               onDownload={handleDownload}

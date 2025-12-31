@@ -1,6 +1,6 @@
 {
   "name": "react-psh-image-editor-modal",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Premium psh image editor component for React",
   "type": "module",
   "main": "dist/index.js",
